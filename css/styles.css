@@ -17,7 +17,11 @@
     }
 }
 
-/* Custom Animations */
+/* ============================================
+   BRAZILIAN FLAIR — CUSTOM ANIMATIONS
+   ============================================ */
+
+/* Fade Up Animation */
 .fade-up {
     opacity: 1;
     transform: translateY(0);
@@ -29,8 +33,345 @@
     transform: translateY(20px);
 }
 
+/* Organic Floating Animation — for decorative elements */
+@keyframes float-organic {
 
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-20px) rotate(1deg);
+    }
+}
+
+.float-organic {
+    animation: float-organic 8s ease-in-out infinite;
+}
+
+.float-organic-delayed {
+    animation: float-organic 10s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.float-organic-slow {
+    animation: float-organic 14s ease-in-out infinite;
+    animation-delay: -7s;
+}
+
+/* Brazilian Diamond Pulse — inspired by flag rhombus */
+@keyframes diamond-pulse {
+
+    0%,
+    100% {
+        transform: rotate(45deg) scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: rotate(45deg) scale(1.05);
+        opacity: 0.25;
+    }
+}
+
+.diamond-pulse {
+    animation: diamond-pulse 4s ease-in-out infinite;
+}
+
+/* Gradient Shimmer — for headlines */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-text {
+    background-size: 200% auto;
+    animation: shimmer 8s linear infinite;
+}
+
+/* Subtle Glow Pulse — for CTA buttons */
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(244, 166, 11, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(244, 166, 11, 0.5), 0 0 60px rgba(244, 166, 11, 0.2);
+    }
+}
+
+.glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Wave Motion — Oscar Niemeyer inspired curves */
+@keyframes wave-drift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(20px) translateY(-10px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.wave-drift {
+    animation: wave-drift 12s ease-in-out infinite;
+}
+
+/* Rotation for decorative shapes */
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-slow {
+    animation: rotate-slow 60s linear infinite;
+}
+
+/* ============================================
+   BRAZILIAN GEOMETRIC PATTERNS
+   ============================================ */
+
+/* Indigenous-inspired pattern overlay */
+.pattern-indigenous {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20L20 0z' fill='none' stroke='%235522e0' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Tropicália wave pattern */
+.pattern-wave {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,60 Q300,0 600,60 T1200,60 V120 H0 Z' fill='%232f6b3f' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+}
+
+/* ============================================
+   CARD ENHANCEMENTS
+   ============================================ */
+
+/* Premium card hover with subtle lift */
+.card-premium {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-premium:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(85, 34, 224, 0.3);
+}
+
+/* Brazilian accent border on hover */
+.brazil-accent-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.brazil-accent-hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2f6b3f, #f4a60b, #5522e0);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brazil-accent-hover:hover::before {
+    transform: scaleX(1);
+}
+
+/* ============================================
+   BUTTON ENHANCEMENTS
+   ============================================ */
+
+/* Magnetic-style button effect */
+.btn-magnetic {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-magnetic:hover {
+    transform: scale(1.05);
+}
+
+.btn-magnetic:active {
+    transform: scale(0.98);
+}
+
+/* Brazilian primary button */
+.btn-brazil-primary {
+    background: linear-gradient(135deg, #f4a60b 0%, #ffd23f 100%);
+    box-shadow: 0 4px 20px rgba(244, 166, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-brazil-primary:hover {
+    box-shadow: 0 8px 30px rgba(244, 166, 11, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   SECTION DIVIDERS — Niemeyer curves
+   ============================================ */
+
+.section-curve-top {
+    position: relative;
+}
+
+.section-curve-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 Q720,0 1440,80 V0 H0 Z' fill='%230A0A0F'/%3E%3C/svg%3E");
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* ============================================
+   STATS SECTION ENHANCEMENTS
+   ============================================ */
+
+.stat-underline {
+    position: relative;
+}
+
+.stat-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.5;
+}
+
+/* ============================================
+   FAQ ENHANCED STYLES
+   ============================================ */
+
+.faq-item-active {
+    border-left: 3px solid #f4a60b !important;
+}
+
+/* ============================================
+   DECORATIVE SHAPES — Figma-friendly SVGs
+   ============================================ */
+
+/* These are positioned via HTML, styled here */
+.shape-diamond {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(47, 107, 63, 0.15), rgba(0, 140, 76, 0.05));
+    transform: rotate(45deg);
+    border-radius: 8px;
+}
+
+.shape-circle {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(85, 34, 224, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 140px solid rgba(244, 166, 11, 0.08);
+}
+
+/* ============================================
+   SCROLLBAR STYLING — Premium feel
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5522e0, #9945FF);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6633f0, #aa55ff);
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+
+::selection {
+    background: rgba(85, 34, 224, 0.4);
+    color: white;
+}
+
+/* ============================================
+   SMOOTH FOCUS STATES — Accessibility
+   ============================================ */
+
+*:focus-visible {
+    outline: 2px solid #5522e0;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   LINK UNDERLINE ANIMATION
+   ============================================ */
+
+.link-underline {
+    position: relative;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+    width: 100%;
 }
