@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Superteam Brazil</title>
+    <meta name="description"
+        content="Discover the talented builders, creators, and professionals in the Superteam Brazil community.">
+    <link href="./css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo-yellow.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .glass-nav {
+            background: rgba(10, 10, 15, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .hero-pattern {
+            background-color: #0A0A0F;
+            background-image:
+                radial-gradient(at 100% 0%, hsla(256, 100%, 40%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(138, 50%, 30%, 0.05) 0px, transparent 50%);
+        }
+    </style>
+</head>
+
+<body class="bg-bg-primary text-white overflow-x-hidden selection:bg-superteam-purple selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-300 py-4 bg-bg-primary/90 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="./assets/images/logo-off-white.svg" alt="Superteam Brazil"
+                    class="h-8 transition-transform group-hover:scale-105">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html#events" class="hover:text-superteam-yellow transition-colors">Events</a>
+                <a href="members.html" class="text-superteam-yellow transition-colors">Members</a>
+                <a href="earn.html" class="hover:text-superteam-yellow transition-colors">Earn</a>
+                <a href="grants.html" class="hover:text-superteam-yellow transition-colors">Grants</a>
+                <a href="https://t.me/superteamBR" target="_blank"
+                    class="bg-superteam-purple hover:bg-superteam-purple/90 text-white px-5 py-2.5 rounded-full font-bold transition-all hover:shadow-[0_0_20px_rgba(85,34,224,0.4)]">
+                    Join Community
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu"
+                aria-expanded="false">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-bg-secondary/95 backdrop-blur-lg border-t border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-xl">
+            <a href="index.html#events" class="block py-2 text-lg hover:text-superteam-yellow">Events</a>
+            <a href="members.html" class="block py-2 text-lg text-superteam-yellow font-bold">Members</a>
+            <a href="earn.html" class="block py-2 text-lg hover:text-superteam-yellow">Earn</a>
+            <a href="grants.html" class="block py-2 text-lg hover:text-superteam-yellow">Grants</a>
+            <a href="https://t.me/superteamBR"
+                class="block mt-4 bg-superteam-purple text-center py-3 rounded-xl font-bold">Join Community</a>
+        </div>
+    </nav>
+
+    <!-- Compact Hero -->
+    <section class="pt-32 pb-12 hero-pattern">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-4 fade-up">Our Members</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 fade-up" style="animation-delay: 0.1s;">
+                Discover talented builders, creators, and professionals in the Superteam Brazil community.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative fade-up" style="animation-delay: 0.2s;">
+                <input type="text" placeholder="Search by name or skill..."
+                    class="w-full bg-bg-card/80 backdrop-blur border border-white/10 text-white px-6 py-4 rounded-full pl-12 outline-none focus:border-superteam-purple transition-colors">
+                <svg class="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Grid -->
+    <section class="py-12 bg-bg-secondary min-h-screen">
+        <div class="container mx-auto px-6">
+
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up" style="animation-delay: 0.3s;">
+                <button
+                    class="filter-btn active px-4 py-2 rounded-full bg-superteam-purple text-white text-sm font-medium transition-all">All</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Core
+                    Team</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Developers</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Designers</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Content</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Growth</button>
+            </div>
+
+            <!-- Members Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-up" style="animation-delay: 0.4s;">
+
+                <!-- Core Team Member 1 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
+                    <div
+                        class="absolute top-3 right-3 bg-superteam-yellow text-bg-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                        Core Team</div>
+                    <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-superteam-yellow p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Admin1" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Luiza Martins</h3>
+                        <p class="text-superteam-purple text-sm mb-1">Community Lead</p>
+                        <p class="text-gray-500 text-xs mb-4">@Superteam Brazil</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Management</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Team Member 2 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
+                    <div
+                        class="absolute top-3 right-3 bg-superteam-yellow text-bg-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                        Core Team</div>
+                    <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-superteam-yellow p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Admin2" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Ricardo Silva</h3>
+                        <p class="text-superteam-purple text-sm mb-1">DevRel</p>
+                        <p class="text-gray-500 text-xs mb-4">@Solana Foundation</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Rust</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member3" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Felipe Santos</h3>
+                        <p class="text-superteam-purple text-sm mb-1">Frontend Dev</p>
+                        <p class="text-gray-500 text-xs mb-4">@Drift</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">React</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member4" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Amanda Costa</h3>
+                        <p class="text-superteam-purple text-sm mb-1">UI Designer</p>
+                        <p class="text-gray-500 text-xs mb-4">Freelance</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Figma</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Design System</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member5" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Bruno Lima</h3>
+                        <p class="text-superteam-purple text-sm mb-1">Content Creator</p>
+                        <p class="text-gray-500 text-xs mb-4">@YouTube</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Video</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member6" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Juliana Alves</h3>
+                        <p class="text-superteam-purple text-sm mb-1">BizDev</p>
+                        <p class="text-gray-500 text-xs mb-4">@Orca</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Sales</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Partnerships</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 7 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member7" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Lucas Pereira</h3>
+                        <p class="text-superteam-purple text-sm mb-1">Rust Engineer</p>
+                        <p class="text-gray-500 text-xs mb-4">Unknown</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Rust</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 8 -->
+                <div
+                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                    <div
+                        class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member8" alt="Member"
+                            class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-lg">Camila Rocha</h3>
+                        <p class="text-superteam-purple text-sm mb-1">Growth Lead</p>
+                        <p class="text-gray-500 text-xs mb-4">@Squads</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Marketing</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12 fade-up" style="animation-delay: 0.5s;">
+                <button
+                    class="px-8 py-3 bg-transparent hover:bg-white/5 border border-white/10 rounded-full font-bold transition-colors">Load
+                    More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bg-primary py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="./assets/images/logo-off-white.svg" alt="Superteam Brazil" class="h-8 mb-6">
+                    <p class="text-gray-400 max-w-xs">The premier hub for Web3 talent in Latin America. Part of the
+                        global Superteam network.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html#events" class="hover:text-superteam-yellow transition-colors">Events</a>
+                        </li>
+                        <li><a href="members.html" class="hover:text-superteam-yellow transition-colors">Members</a>
+                        </li>
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Earn</a></li>
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Grants</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Community</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Telegram</a></li>
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Discord</a></li>
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-superteam-yellow transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>© 2026 Superteam Brazil. All rights reserved.</div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Superteam Global</a>
+                    <a href="#" class="hover:text-white transition-colors">Solana</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script>
+        // Simple Filter Logic for Demo
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-superteam-purple', 'text-white');
+                    b.classList.add('bg-white/5', 'text-gray-300');
+                });
+
+                // Add active class to clicked
+                btn.classList.remove('bg-white/5', 'text-gray-300');
+                btn.classList.add('bg-superteam-purple', 'text-white');
+            });
+        });
+    </script>
+</body>
+
+</html>
