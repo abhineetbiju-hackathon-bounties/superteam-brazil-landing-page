@@ -208,9 +208,181 @@
     transform: scaleX(1);
 }
 
+
 /* ============================================
-   BUTTON ENHANCEMENTS
+   BUTTON ENHANCEMENTS — Brazilian/Crypto Theme
    ============================================ */
+
+/* 
+ * Button Shape Philosophy:
+ * - Inspired by Brazilian flag diamond (rhombus)
+ * - Blockchain/crypto geometric precision
+ * - Clean, modern Web3 aesthetic
+ * - Figma-compatible via clip-path polygons
+ */
+
+/* Base button style with beveled corners - Brazilian Diamond influence */
+.btn-beveled {
+    position: relative;
+    clip-path: polygon(12px 0,
+            /* top-left bevel */
+            calc(100% - 12px) 0,
+            /* top-right bevel */
+            100% 12px,
+            /* right-top corner */
+            100% calc(100% - 12px),
+            calc(100% - 12px) 100%,
+            12px 100%,
+            0 calc(100% - 12px),
+            0 12px
+            /* left-top corner */
+        );
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-beveled:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.btn-beveled:active {
+    transform: scale(0.98);
+}
+
+/* Hexagonal button - blockchain node inspired */
+.btn-hex {
+    clip-path: polygon(8% 0%,
+            92% 0%,
+            100% 50%,
+            92% 100%,
+            8% 100%,
+            0% 50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-hex:hover {
+    transform: scale(1.02);
+}
+
+/* Diamond edges - subtle 45° corner cuts */
+.btn-diamond-cut {
+    position: relative;
+    clip-path: polygon(8px 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            8px 100%,
+            0 calc(100% - 8px),
+            0 8px);
+    transition: all 0.3s ease;
+}
+
+/* Border layer - positioned behind, extends outside to create border effect */
+.btn-diamond-cut::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: rgba(255, 255, 255, 0.15);
+    clip-path: polygon(8px 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            8px 100%,
+            0 calc(100% - 8px),
+            0 8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.btn-diamond-cut:hover::before {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-diamond-cut:hover {
+    transform: scale(1.02);
+}
+
+/* Asymmetric cut - Brazilian modernist influence */
+.btn-asymmetric {
+    clip-path: polygon(0 0,
+            calc(100% - 16px) 0,
+            100% 16px,
+            100% 100%,
+            16px 100%,
+            0 calc(100% - 16px));
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-asymmetric:hover {
+    transform: scale(1.02) translateY(-2px);
+}
+
+/* Stacked block effect - blockchain block visual */
+.btn-stacked {
+    position: relative;
+}
+
+.btn-stacked::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    clip-path: inherit;
+    transform: translate(4px, 4px);
+    opacity: 0.3;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.btn-stacked:hover::before {
+    transform: translate(6px, 6px);
+    opacity: 0.4;
+}
+
+/* Primary CTA with glow - Superteam Yellow */
+.btn-brazil-glow {
+    position: relative;
+    overflow: visible;
+}
+
+.btn-brazil-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #f4a60b, #ffd23f, #f4a60b);
+    opacity: 0;
+    z-index: -1;
+    filter: blur(12px);
+    transition: opacity 0.3s ease;
+    clip-path: inherit;
+}
+
+.btn-brazil-glow:hover::after {
+    opacity: 0.5;
+}
+
+/* Purple glow variant */
+.btn-purple-glow {
+    position: relative;
+    overflow: visible;
+}
+
+.btn-purple-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #5522e0, #9945FF, #5522e0);
+    opacity: 0;
+    z-index: -1;
+    filter: blur(12px);
+    transition: opacity 0.3s ease;
+}
+
+.btn-purple-glow:hover::after {
+    opacity: 0.4;
+}
 
 /* Magnetic-style button effect */
 .btn-magnetic {
@@ -218,7 +390,7 @@
 }
 
 .btn-magnetic:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .btn-magnetic:active {
@@ -236,6 +408,7 @@
     box-shadow: 0 8px 30px rgba(244, 166, 11, 0.5);
     transform: translateY(-2px);
 }
+
 
 /* ============================================
    SECTION DIVIDERS — Premium Visual Separation

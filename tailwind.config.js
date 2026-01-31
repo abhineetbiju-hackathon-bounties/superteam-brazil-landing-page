@@ -7,6 +7,7 @@ module.exports = {
                 superteam: {
                     purple: "#5522e0",
                     yellow: "#f4a60b",
+                    ivory: "#f5e8ca",  // Logo's off-white for text
                     "purple-light": "#bcb3ff",
                     "yellow-light": "#ffd9a1",
                     "purple-dark": "#3b1899",
@@ -33,7 +34,7 @@ module.exports = {
                 "bg-secondary": "#1b231d",
                 "bg-card": "#1A1A2E",
                 "bg-card-hover": "#252545",
-                "text-secondary": "#f7eacb",
+                "text-secondary": "#f5e8ca",  // Now uses logo ivory
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
