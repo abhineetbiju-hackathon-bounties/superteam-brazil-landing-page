@@ -28,16 +28,37 @@
         }
 
         .hero-pattern {
-            background-color: #0A0A0F;
             background-image:
                 radial-gradient(at 0% 0%, hsla(256, 100%, 40%, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, hsla(263, 100%, 60%, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, hsla(138, 50%, 30%, 0.1) 0px, transparent 50%);
         }
 
-        /* Geometric Pattern Overlay */
-        .geo-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235522e0' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        /* Section-Specific Backgrounds */
+        .section-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .noise-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+        }
+
+        /* Calçadão Pattern - VIBRANT REWORK (Direct SVG Color) */
+        .calcadao-pattern {
+            /* Using direct colored SVG to ensure visibility without mask complexity */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='40' viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q 25 40 50 20 T 100 20' fill='none' stroke='%2314F195' stroke-width='2' stroke-opacity='0.2'/%3E%3Cpath d='M0 21 Q 25 41 50 21 T 100 21' fill='none' stroke='%239945FF' stroke-width='2' stroke-opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 100px 40px;
+            opacity: 0.6;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
         }
     </style>
 </head>
@@ -89,7 +110,8 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-pattern">
         <!-- Background Elements -->
-        <div class="absolute inset-0 geo-overlay pointer-events-none"></div>
+        <div class="section-texture calcadao-pattern"></div>
+        <div class="section-texture noise-overlay"></div>
 
         <!-- Central Gradient Glow -->
         <div
@@ -113,21 +135,41 @@
 
         <!-- Floating Geometric Shapes - Organic Motion -->
         <div class="absolute top-[15%] left-[10%] float-organic pointer-events-none hidden lg:block">
-            <svg width="80" height="80" viewBox="0 0 80 80" class="opacity-20">
-                <circle cx="40" cy="40" r="35" fill="none" stroke="#14F195" stroke-width="2" />
-                <circle cx="40" cy="40" r="20" fill="#14F195" fill-opacity="0.1" />
+            <!-- 3D Diamond (Brazil Flag Shape) -->
+            <svg width="80" height="80" viewBox="0 0 100 100" class="opacity-80">
+                <defs>
+                    <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#F4A60B;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#F4A60B;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+                <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="url(#diamondGrad)" stroke-width="3"
+                    filter="drop-shadow(0 0 5px rgba(244, 166, 11, 0.3))" />
+                <path d="M50 20 L80 50 L50 80 L20 50 Z" fill="#F4A60B" fill-opacity="0.1" />
             </svg>
         </div>
 
         <div class="absolute top-[25%] right-[8%] float-organic-delayed pointer-events-none hidden lg:block">
-            <svg width="60" height="60" viewBox="0 0 60 60" class="opacity-15">
-                <polygon points="30,5 55,50 5,50" fill="none" stroke="#f4a60b" stroke-width="2" />
+            <!-- 3D Cube Wireframe -->
+            <svg width="70" height="70" viewBox="0 0 100 100" class="opacity-60">
+                <defs>
+                    <linearGradient id="cubeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#14F195;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#14F195;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+                <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="none" stroke="url(#cubeGrad)"
+                    stroke-width="2" filter="drop-shadow(0 0 5px rgba(20, 241, 149, 0.3))" />
+                <path d="M10 30 L50 50 L90 30 M50 50 L50 90" stroke="url(#cubeGrad)" stroke-width="2" />
             </svg>
         </div>
 
         <div class="absolute bottom-[20%] left-[5%] float-organic-slow pointer-events-none hidden lg:block">
-            <svg width="100" height="100" viewBox="0 0 100 100" class="opacity-10">
-                <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke="#5522e0" stroke-width="2"
+            <!-- Tilted Square (Tile) -->
+            <svg width="90" height="90" viewBox="0 0 100 100" class="opacity-20">
+                <rect x="25" y="25" width="50" height="50" fill="none" stroke="#5522e0" stroke-width="2"
+                    transform="rotate(25 50 50)" />
+                <rect x="35" y="35" width="30" height="30" fill="#5522e0" fill-opacity="0.1"
                     transform="rotate(45 50 50)" />
             </svg>
         </div>
@@ -204,7 +246,22 @@
     </section>
 
     <!-- Mission / What We Do Section -->
-    <section id="mission" class="py-24 bg-bg-primary relative overflow-hidden">
+    <section id="mission" class="py-24 bg-bg-primary relative overflow-hidden section-divider-top section-glow-top">
+        <!-- Floating Elements -->
+        <div class="absolute top-10 left-0 w-full h-full pointer-events-none overflow-hidden">
+            <div class="absolute top-[10%] left-[5%] opacity-10 animate-float-slow">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                    <rect x="25" y="25" width="50" height="50" fill="none" stroke="#5522e0" stroke-width="1"
+                        transform="rotate(45 50 50)" />
+                </svg>
+            </div>
+            <div class="absolute bottom-[20%] right-[5%] opacity-10 animate-float">
+                <svg width="60" height="60" viewBox="0 0 100 100">
+                    <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="#F4A60B" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
         <!-- Decorative Background Shape -->
         <div class="absolute top-20 right-0 w-[300px] h-[300px] opacity-5 pointer-events-none hidden lg:block">
             <svg viewBox="0 0 300 300" class="w-full h-full">
@@ -300,13 +357,27 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-24 relative overflow-hidden">
+    <section class="py-32 relative overflow-hidden section-divider-brazil section-glow-top section-glow-bottom">
+        <!-- Background Texture -->
+        <div class="section-texture calcadao-pattern opacity-40"></div>
+
         <!-- Decorative Background -->
         <div class="absolute inset-0 bg-gradient-to-b from-brazil-green-dark/5 via-transparent to-transparent"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
         <div
             class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
+        </div>
+
+        <!-- Floating Stats Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div
+                class="absolute top-[20%] left-[10%] w-2 h-2 bg-superteam-purple rounded-full opacity-40 animate-pulse">
+            </div>
+            <div class="absolute top-[60%] right-[15%] w-3 h-3 bg-superteam-yellow rounded-full opacity-30 animate-pulse"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-[30%] left-[40%] w-1.5 h-1.5 bg-solana-green rounded-full opacity-50 animate-pulse"
+                style="animation-delay: 2s;"></div>
         </div>
 
         <div class="container mx-auto px-6 relative">
@@ -363,7 +434,17 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="py-24 bg-bg-primary relative overflow-hidden">
+    <section id="events" class="py-28 bg-bg-primary relative overflow-hidden section-divider-top">
+        <!-- Floating Decor -->
+        <div
+            class="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-b from-superteam-purple/10 to-transparent rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div class="absolute bottom-20 left-10 opacity-10 pointer-events-none animate-float-slow">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <path d="M10 30 L50 50 L90 30 M50 50 L50 90" stroke="#14F195" stroke-width="1.5" fill="none" />
+                <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" stroke="#14F195" stroke-width="1.5" fill="none" />
+            </svg>
+        </div>
         <div class="container mx-auto px-6 mb-16 flex justify-between items-end fade-up">
             <div>
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Upcoming Events</h2>
@@ -453,9 +534,17 @@
         </div>
     </section>
 
-    <!-- Members Preview Section -->
-    <section id="members" class="py-24 bg-bg-secondary relative">
-        <div class="container mx-auto px-6 text-center mb-16 fade-up">
+    <!-- Members / Community Section -->
+    <section id="members"
+        class="py-28 bg-bg-secondary relative overflow-hidden section-wave-divider section-glow-bottom">
+        <!-- Background Elements -->
+        <div class="section-texture calcadao-pattern opacity-30"></div>
+        <div class="section-texture noise-overlay"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-superteam-purple/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 relative text-center mb-16 fade-up">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">Our Community</h2>
             <p class="text-gray-400 max-w-xl mx-auto mb-8">Meet the talented builders and creators in our ecosystem.</p>
 
@@ -549,7 +638,7 @@
     </section>
 
     <!-- Partners Section -->
-    <section class="py-24 bg-bg-primary border-t border-white/5">
+    <section class="py-20 relative section-divider-top section-divider-bottom">
         <div class="container mx-auto px-6 text-center mb-16 fade-up">
             <h2 class="text-2xl font-bold text-gray-400 uppercase tracking-widest">Trusted By Ecosystem Leaders</h2>
         </div>
@@ -573,7 +662,7 @@
     </section>
 
     <!-- Wall of Love -->
-    <section class="py-24 bg-bg-primary relative">
+    <section class="py-28 bg-bg-primary relative section-glow-top">
         <div class="container mx-auto px-6 mb-16 text-center fade-up">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">Wall of Love</h2>
         </div>
@@ -625,7 +714,19 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-24 bg-bg-secondary">
+    <section id="faq" class="py-28 bg-bg-secondary relative overflow-hidden section-divider-brazil section-glow-top">
+        <!-- Background Elements -->
+        <div class="section-texture noise-overlay opacity-20"></div>
+
+        <!-- Floating Decor -->
+        <div class="absolute top-20 right-[10%] opacity-10 animate-float-slow pointer-events-none hidden lg:block">
+            <svg width="120" height="120" viewBox="0 0 100 100">
+                <rect x="25" y="25" width="50" height="50" fill="none" stroke="#F4A60B" stroke-width="1.5"
+                    transform="rotate(15 50 50)" />
+                <rect x="35" y="35" width="30" height="30" fill="#F4A60B" fill-opacity="0.1"
+                    transform="rotate(35 50 50)" />
+            </svg>
+        </div>
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center fade-up">Frequently Asked Questions</h2>
 
@@ -681,7 +782,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-32 relative overflow-hidden">
+    <section class="py-32 relative overflow-hidden section-divider-top section-glow-top">
         <!-- Animated Background -->
         <div
             class="absolute inset-0 bg-gradient-to-br from-superteam-purple/20 via-solana-purple/10 to-brazil-green-dark/10">
@@ -849,16 +950,8 @@
             </div>
 
             <!-- Bottom Bar -->
-            <div
-                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <div class="pt-8 border-t border-white/5 flex justify-center items-center text-sm text-gray-500">
                 <div>© 2026 Superteam Brazil. All rights reserved.</div>
-                <div class="flex items-center gap-2">
-                    <span>Built with</span>
-                    <span class="text-red-500">❤️</span>
-                    <span>for the</span>
-                    <span class="text-solana-green font-semibold">Solana</span>
-                    <span>ecosystem</span>
-                </div>
             </div>
         </div>
     </footer>

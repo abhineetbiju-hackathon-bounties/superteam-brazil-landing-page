@@ -238,23 +238,172 @@
 }
 
 /* ============================================
-   SECTION DIVIDERS — Niemeyer curves
+   SECTION DIVIDERS — Premium Visual Separation
    ============================================ */
 
-.section-curve-top {
+/* Gradient line divider - top of section */
+.section-divider-top {
     position: relative;
 }
 
-.section-curve-top::before {
+.section-divider-top::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 Q720,0 1440,80 V0 H0 Z' fill='%230A0A0F'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(85, 34, 224, 0.3) 20%,
+            rgba(153, 69, 255, 0.5) 50%,
+            rgba(85, 34, 224, 0.3) 80%,
+            transparent 100%);
+}
+
+/* Gradient line divider - bottom of section */
+.section-divider-bottom {
+    position: relative;
+}
+
+.section-divider-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(85, 34, 224, 0.3) 20%,
+            rgba(153, 69, 255, 0.5) 50%,
+            rgba(85, 34, 224, 0.3) 80%,
+            transparent 100%);
+}
+
+/* Glow border effect - creates depth between sections */
+.section-glow-top {
+    position: relative;
+}
+
+.section-glow-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg,
+            rgba(85, 34, 224, 0.08) 0%,
+            transparent 100%);
     pointer-events: none;
+    z-index: 0;
+}
+
+.section-glow-bottom {
+    position: relative;
+}
+
+.section-glow-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(0deg,
+            rgba(85, 34, 224, 0.08) 0%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Brazilian colored gradient divider */
+.section-divider-brazil {
+    position: relative;
+}
+
+.section-divider-brazil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #2f6b3f 25%,
+            #f4a60b 50%,
+            #5522e0 75%,
+            transparent 100%);
+    opacity: 0.5;
+    border-radius: 2px;
+}
+
+/* Wave divider SVG overlay */
+.section-wave-divider {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-wave-divider::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 60' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0,60 Q360,30 720,45 T1440,30 V0 H0 Z' fill='%230A0A0F'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Fade gradient for smooth background transitions */
+.section-fade-in {
+    position: relative;
+}
+
+.section-fade-in::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(180deg,
+            rgba(10, 10, 15, 0.9) 0%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Dotted line divider */
+.section-dots-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 600px;
+    height: 2px;
+    background-image: radial-gradient(circle, rgba(153, 69, 255, 0.6) 1px, transparent 1px);
+    background-size: 12px 2px;
+    background-position: center;
+}
+
+/* Section spacing utilities */
+.section-spacer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.section-spacer-lg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 /* ============================================
