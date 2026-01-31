@@ -714,3 +714,78 @@
 .link-underline:hover::after {
     width: 100%;
 }
+
+/* ============================================
+   MOBILE RESPONSIVENESS FIXES
+   ============================================ */
+
+/* Prevent horizontal overflow on mobile */
+@media (max-width: 767px) {
+
+    /* Constrain stat counters to prevent bleeding */
+    .stat-counter {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        word-break: break-word;
+    }
+
+    /* Newsletter input fixes for mobile */
+    .container input[type="email"] {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    /* Reduce hero section text sizes for mobile */
+    .hero-pattern h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    /* Constrain floating decorative elements */
+    .diamond-pulse {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    /* Fix filter button wrapping */
+    .filter-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    /* Member card fixes */
+    .member-card {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Event card content overflow fix */
+    .swiper-slide {
+        max-width: 90vw;
+    }
+
+    /* Section texture scaling */
+    .section-texture {
+        background-size: auto 100%;
+    }
+
+    /* Reduce padding on sections for mobile */
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Fix CTA buttons to not overflow */
+    .btn-beveled,
+    .btn-diamond-cut {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Fixed width buttons for CTA section on mobile */
+    section .flex.flex-col.sm\\:flex-row a {
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

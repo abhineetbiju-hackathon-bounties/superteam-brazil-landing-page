@@ -924,16 +924,16 @@ h1,
   height: 0.5rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-24 {
   height: 6rem;
 }
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .h-4 {
@@ -1042,6 +1042,10 @@ h1,
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[200\%\] {
+  width: 200%;
 }
 
 .w-\[300px\] {
@@ -1163,16 +1167,6 @@ h1,
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
 }
 
 .cursor-default {
@@ -2868,6 +2862,92 @@ h1,
   width: 100%;
 }
 
+/* ============================================
+   MOBILE RESPONSIVENESS FIXES
+   ============================================ */
+
+/* Prevent horizontal overflow on mobile */
+
+@media (max-width: 767px) {
+  /* Constrain stat counters to prevent bleeding */
+
+  .stat-counter {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    word-break: break-word;
+  }
+
+  /* Newsletter input fixes for mobile */
+
+  .container input[type="email"] {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  /* Reduce hero section text sizes for mobile */
+
+  .hero-pattern h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  /* Constrain floating decorative elements */
+
+  .diamond-pulse {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Fix filter button wrapping */
+
+  .filter-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  /* Member card fixes */
+
+  .member-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Event card content overflow fix */
+
+  .swiper-slide {
+    max-width: 90vw;
+  }
+
+  /* Section texture scaling */
+
+  .section-texture {
+    background-size: auto 100%;
+  }
+
+  /* Reduce padding on sections for mobile */
+
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Fix CTA buttons to not overflow */
+
+  .btn-beveled,
+    .btn-diamond-cut {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Fixed width buttons for CTA section on mobile */
+
+  section .flex.flex-col.sm\\:flex-row a {
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .selection\:bg-superteam-purple *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(85 34 224 / var(--tw-bg-opacity, 1));
@@ -3111,16 +3191,16 @@ h1,
     grid-column: span 2 / span 2;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-32 {
+    height: 8rem;
   }
 
   .md\:grid-cols-2 {
@@ -3170,6 +3250,10 @@ h1,
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:opacity-40 {
+    opacity: 0.4;
   }
 }
 
