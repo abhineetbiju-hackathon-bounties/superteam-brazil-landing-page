@@ -103,6 +103,23 @@
     animation: shimmer 8s linear infinite;
 }
 
+/* Copacabana Wave Animation — Brazilian cultural touch */
+@keyframes wave-cultural {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-20px);
+    }
+}
+
+.animate-wave-cultural {
+    animation: wave-cultural 6s ease-in-out infinite;
+}
+
 /* Subtle Glow Pulse — for CTA buttons */
 @keyframes glow-pulse {
 

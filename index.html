@@ -118,6 +118,39 @@
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-superteam-purple/15 rounded-full blur-[120px] animate-pulse">
         </div>
 
+        <!-- Brazilian Cultural Touch: Animated Copacabana Wave Pattern -->
+        <div
+            class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none overflow-hidden opacity-40 hidden md:block">
+            <svg class="w-[200%] h-full" viewBox="0 0 2400 100" preserveAspectRatio="none"
+                style="animation: wave-slide 8s linear infinite;">
+                <defs>
+                    <linearGradient id="culturalWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#2f6b3f;stop-opacity:0.7" />
+                        <stop offset="25%" style="stop-color:#f4a60b;stop-opacity:0.5" />
+                        <stop offset="50%" style="stop-color:#002776;stop-opacity:0.6" />
+                        <stop offset="75%" style="stop-color:#f4a60b;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#2f6b3f;stop-opacity:0.7" />
+                    </linearGradient>
+                </defs>
+                <!-- First wave set -->
+                <path d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50 T1500,50 T1800,50 T2100,50 T2400,50 V100 H0 Z"
+                    fill="url(#culturalWaveGrad)" />
+                <path d="M0,60 Q150,80 300,60 T600,60 T900,60 T1200,60 T1500,60 T1800,60 T2100,60 T2400,60 V100 H0 Z"
+                    fill="rgba(85,34,224,0.25)" />
+            </svg>
+            <style>
+                @keyframes wave-slide {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+        </div>
+
         <!-- Brazilian Flag Diamond - Floating Background Element -->
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none diamond-pulse">
@@ -532,6 +565,87 @@
                 </div>
             </div>
         </div>
+
+        <!-- View All Events CTA -->
+        <div class="container mx-auto px-6 mt-8 text-center fade-up">
+            <a href="https://lu.ma/superteambr" target="_blank"
+                class="inline-block px-8 py-3 bg-superteam-purple hover:bg-solana-purple font-bold transition-colors btn-beveled">
+                View All Events on Lu.ma →
+            </a>
+        </div>
+
+        <!-- Past Events Gallery -->
+        <div class="container mx-auto px-6 mt-20 fade-up">
+            <div class="mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Past Events</h3>
+                <p class="text-gray-400">Highlights from our community gatherings.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Past Event 1 -->
+                <div
+                    class="bg-bg-card border border-white/5 rounded-2xl overflow-hidden group hover:border-gray-600/50 transition-all">
+                    <div class="h-40 bg-gradient-to-br from-purple-900/50 to-indigo-900/50 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-white/10 text-gray-400">
+                            JAN 20, 2026
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-gray-800/80 backdrop-blur-md px-2 py-1 rounded text-xs text-gray-300">
+                            120 attendees
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold mb-2 text-gray-200">Web3 Builders Night SP</h4>
+                        <p class="text-gray-500 text-sm flex items-center gap-2">
+                            <span>📍</span> São Paulo, Brazil
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Past Event 2 -->
+                <div
+                    class="bg-bg-card border border-white/5 rounded-2xl overflow-hidden group hover:border-gray-600/50 transition-all">
+                    <div class="h-40 bg-gradient-to-br from-green-900/50 to-teal-900/50 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-white/10 text-gray-400">
+                            DEC 15, 2025
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-gray-800/80 backdrop-blur-md px-2 py-1 rounded text-xs text-gray-300">
+                            85 attendees
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold mb-2 text-gray-200">Solana Dev Workshop</h4>
+                        <p class="text-gray-500 text-sm flex items-center gap-2">
+                            <span>📍</span> Rio de Janeiro, Brazil
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Past Event 3 -->
+                <div
+                    class="bg-bg-card border border-white/5 rounded-2xl overflow-hidden group hover:border-gray-600/50 transition-all">
+                    <div class="h-40 bg-gradient-to-br from-yellow-900/50 to-orange-900/50 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-white/10 text-gray-400">
+                            NOV 28, 2025
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-gray-800/80 backdrop-blur-md px-2 py-1 rounded text-xs text-gray-300">
+                            200 attendees
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold mb-2 text-gray-200">Superteam Hackathon Finals</h4>
+                        <p class="text-gray-500 text-sm flex items-center gap-2">
+                            <span>📍</span> São Paulo, Brazil
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Members / Community Section -->
@@ -579,6 +693,13 @@
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Rust</span>
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">React</span>
                 </div>
+                <a href="https://twitter.com/mariasilva" target="_blank"
+                    class="text-gray-400 hover:text-superteam-purple transition-colors">
+                    <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
             </div>
 
             <!-- Member 2 -->
@@ -595,6 +716,13 @@
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Solidity</span>
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Anchor</span>
                 </div>
+                <a href="https://twitter.com/joaosantos" target="_blank"
+                    class="text-gray-400 hover:text-superteam-purple transition-colors">
+                    <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
             </div>
 
             <!-- Member 3 -->
@@ -611,6 +739,13 @@
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Figma</span>
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">UI/UX</span>
                 </div>
+                <a href="https://twitter.com/anasouza" target="_blank"
+                    class="text-gray-400 hover:text-superteam-purple transition-colors">
+                    <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
             </div>
 
             <!-- Member 4 -->
@@ -627,6 +762,13 @@
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Growth</span>
                     <span class="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">Events</span>
                 </div>
+                <a href="https://twitter.com/pedrooliveira" target="_blank"
+                    class="text-gray-400 hover:text-superteam-purple transition-colors">
+                    <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
             </div>
         </div>
 
@@ -764,6 +906,38 @@
                 </div>
 
                 <!-- FAQ Item 3 -->
+                <div class="bg-bg-card rounded-xl border border-white/5 overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors">
+                        <span class="font-bold">What opportunities are available?</span>
+                        <span class="transform transition-transform text-superteam-purple text-2xl">+</span>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-300">
+                            Members can access bounties, full-time jobs, freelance gigs, grants, and hackathon
+                            opportunities from top Solana projects. We also share exclusive early access to new
+                            protocols and investment opportunities.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-bg-card rounded-xl border border-white/5 overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors">
+                        <span class="font-bold">How can projects partner with us?</span>
+                        <span class="transform transition-transform text-superteam-purple text-2xl">+</span>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-300">
+                            Projects can partner with Superteam Brazil for community events, bounty campaigns, talent
+                            sourcing, and local market expansion. Reach out via our Telegram or Twitter to discuss
+                            collaboration opportunities.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
                 <div class="bg-bg-card rounded-xl border border-white/5 overflow-hidden">
                     <button
                         class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors">
