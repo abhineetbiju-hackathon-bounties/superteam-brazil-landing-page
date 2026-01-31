@@ -88,7 +88,7 @@
 
             <!-- Search Bar -->
             <div class="max-w-xl mx-auto relative fade-up" style="animation-delay: 0.2s;">
-                <input type="text" placeholder="Search by name or skill..."
+                <input id="member-search" type="text" placeholder="Search by name or skill..."
                     class="w-full bg-bg-card/80 backdrop-blur border border-white/10 text-white px-6 py-4 rounded-full pl-12 outline-none focus:border-superteam-purple transition-colors">
                 <svg class="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
@@ -105,27 +105,28 @@
 
             <!-- Filters -->
             <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up" style="animation-delay: 0.3s;">
-                <button
+                <button data-filter="all"
                     class="filter-btn active px-4 py-2 btn-diamond-cut bg-superteam-purple text-white text-sm font-medium transition-all">All</button>
-                <button
+                <button data-filter="core"
                     class="filter-btn px-4 py-2 btn-diamond-cut bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Core
                     Team</button>
-                <button
+                <button data-filter="developers"
                     class="filter-btn px-4 py-2 btn-diamond-cut bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Developers</button>
-                <button
+                <button data-filter="designers"
                     class="filter-btn px-4 py-2 btn-diamond-cut bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Designers</button>
-                <button
+                <button data-filter="content"
                     class="filter-btn px-4 py-2 btn-diamond-cut bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Content</button>
-                <button
+                <button data-filter="growth"
                     class="filter-btn px-4 py-2 btn-diamond-cut bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium border border-white/5 transition-all">Growth</button>
             </div>
 
             <!-- Members Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-up" style="animation-delay: 0.4s;">
+            <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-up"
+                style="animation-delay: 0.4s;">
 
                 <!-- Core Team Member 1 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
+                <div data-category="core"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
                     <div
                         class="absolute top-3 right-3 bg-superteam-yellow text-bg-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                         Core Team</div>
@@ -152,8 +153,8 @@
                 </div>
 
                 <!-- Core Team Member 2 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
+                <div data-category="core"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-superteam-yellow/50 relative overflow-hidden group hover:-translate-y-1 transition-all">
                     <div
                         class="absolute top-3 right-3 bg-superteam-yellow text-bg-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                         Core Team</div>
@@ -179,9 +180,9 @@
                     </div>
                 </div>
 
-                <!-- Member 3 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 3 - Developer -->
+                <div data-category="developers"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member3" alt="Member"
@@ -205,9 +206,9 @@
                     </div>
                 </div>
 
-                <!-- Member 4 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 4 - Designer -->
+                <div data-category="designers"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member4" alt="Member"
@@ -231,9 +232,9 @@
                     </div>
                 </div>
 
-                <!-- Member 5 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 5 - Content -->
+                <div data-category="content"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member5" alt="Member"
@@ -257,9 +258,9 @@
                     </div>
                 </div>
 
-                <!-- Member 6 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 6 - Growth -->
+                <div data-category="growth"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member6" alt="Member"
@@ -283,9 +284,9 @@
                     </div>
                 </div>
 
-                <!-- Member 7 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 7 - Developer -->
+                <div data-category="developers"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member7" alt="Member"
@@ -309,9 +310,9 @@
                     </div>
                 </div>
 
-                <!-- Member 8 -->
-                <div
-                    class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
+                <!-- Member 8 - Growth -->
+                <div data-category="growth"
+                    class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 transition-all group hover:-translate-y-1">
                     <div
                         class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors p-1">
                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Member8" alt="Member"
@@ -338,9 +339,10 @@
             </div>
 
             <div class="text-center mt-12 fade-up" style="animation-delay: 0.5s;">
-                <button
+                <button id="load-more-btn"
                     class="px-8 py-3 bg-transparent hover:bg-white/5 border border-white/10 font-bold transition-colors btn-diamond-cut">Load
                     More</button>
+                <p id="no-more-members" class="hidden text-gray-500 mt-4">All members are currently displayed</p>
             </div>
         </div>
     </section>
@@ -389,20 +391,68 @@
 
     <script src="./js/main.js"></script>
     <script>
-        // Simple Filter Logic for Demo
+        // Filter & Search Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const memberCards = document.querySelectorAll('.member-card');
+        const searchInput = document.getElementById('member-search');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const noMoreMsg = document.getElementById('no-more-members');
+        let currentFilter = 'all';
+
+        // Filter function
+        function filterMembers() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            memberCards.forEach(card => {
+                const category = card.dataset.category;
+                const cardText = card.textContent.toLowerCase();
+
+                // Check if matches filter
+                const matchesFilter = currentFilter === 'all' || category === currentFilter;
+
+                // Check if matches search
+                const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
+
+                // Show or hide card
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = '';
+                    card.style.opacity = '1';
+                    card.style.transform = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Filter button click handlers
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all
+                // Update current filter
+                currentFilter = btn.dataset.filter;
+
+                // Update button styles
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-superteam-purple', 'text-white');
+                    b.classList.remove('bg-superteam-purple', 'text-white', 'active');
                     b.classList.add('bg-white/5', 'text-gray-300');
                 });
 
-                // Add active class to clicked
                 btn.classList.remove('bg-white/5', 'text-gray-300');
-                btn.classList.add('bg-superteam-purple', 'text-white');
+                btn.classList.add('bg-superteam-purple', 'text-white', 'active');
+
+                // Apply filter
+                filterMembers();
             });
+        });
+
+        // Search input handler
+        searchInput.addEventListener('input', filterMembers);
+
+        // Load More button handler
+        loadMoreBtn.addEventListener('click', () => {
+            // In a real app, this would fetch more members from an API
+            // For this demo, we'll show a message that all members are displayed
+            loadMoreBtn.style.display = 'none';
+            noMoreMsg.classList.remove('hidden');
         });
     </script>
 </body>
