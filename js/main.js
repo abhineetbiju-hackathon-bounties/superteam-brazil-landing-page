@@ -124,4 +124,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Member Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const memberCards = document.querySelectorAll('.member-card');
+
+    if (filterButtons.length > 0 && memberCards.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-superteam-purple', 'text-white', 'shadow-[0_0_15px_rgba(85,34,224,0.4)]');
+                    b.classList.add('bg-white/5', 'hover:bg-white/10', 'border', 'border-white/5');
+                });
+
+                btn.classList.remove('bg-white/5', 'hover:bg-white/10', 'border', 'border-white/5');
+                btn.classList.add('bg-superteam-purple', 'text-white', 'shadow-[0_0_15px_rgba(85,34,224,0.4)]');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                memberCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'block';
+                        // Add fade-in animation
+                        card.classList.add('fade-up');
+                        card.classList.remove('fade-up-init');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
 });

@@ -204,7 +204,7 @@
     </section>
 
     <!-- Mission / What We Do Section -->
-    <section id="mission" class="py-28 bg-bg-primary relative overflow-hidden">
+    <section id="mission" class="py-24 bg-bg-primary relative overflow-hidden">
         <!-- Decorative Background Shape -->
         <div class="absolute top-20 right-0 w-[300px] h-[300px] opacity-5 pointer-events-none hidden lg:block">
             <svg viewBox="0 0 300 300" class="w-full h-full">
@@ -215,7 +215,7 @@
 
         <div class="container mx-auto px-6 relative">
             <!-- Section Header -->
-            <div class="text-center mb-20 fade-up">
+            <div class="text-center mb-16 fade-up">
                 <span
                     class="inline-block text-superteam-purple uppercase tracking-widest text-sm font-semibold mb-4">Nossa
                     Missão</span>
@@ -364,7 +364,7 @@
 
     <!-- Events Section -->
     <section id="events" class="py-24 bg-bg-primary relative overflow-hidden">
-        <div class="container mx-auto px-6 mb-12 flex justify-between items-end fade-up">
+        <div class="container mx-auto px-6 mb-16 flex justify-between items-end fade-up">
             <div>
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Upcoming Events</h2>
                 <p class="text-gray-400">Join the community at our next gathering.</p>
@@ -461,20 +461,24 @@
 
             <div class="flex flex-wrap justify-center gap-4">
                 <button
-                    class="px-6 py-2 rounded-full bg-superteam-purple text-white font-medium shadow-[0_0_15px_rgba(85,34,224,0.4)]">All</button>
+                    class="filter-btn px-6 py-2 rounded-full bg-superteam-purple text-white font-medium shadow-[0_0_15px_rgba(85,34,224,0.4)] transition-all cursor-pointer"
+                    data-filter="all">All</button>
                 <button
-                    class="px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">Developers</button>
+                    class="filter-btn px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors cursor-pointer"
+                    data-filter="developer">Developers</button>
                 <button
-                    class="px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">Designers</button>
+                    class="filter-btn px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors cursor-pointer"
+                    data-filter="designer">Designers</button>
                 <button
-                    class="px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">Content</button>
+                    class="filter-btn px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 transition-colors cursor-pointer"
+                    data-filter="content">Content</button>
             </div>
         </div>
 
-        <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-up">
+        <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
             <!-- Member 1 -->
-            <div
-                class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center">
+            <div class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center"
+                data-category="developer">
                 <div
                     class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors overflow-hidden">
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maria" alt="Maria" />
@@ -489,8 +493,8 @@
             </div>
 
             <!-- Member 2 -->
-            <div
-                class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center">
+            <div class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center"
+                data-category="developer">
                 <div
                     class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors overflow-hidden">
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Joao" alt="Joao" />
@@ -505,8 +509,8 @@
             </div>
 
             <!-- Member 3 -->
-            <div
-                class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center">
+            <div class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center"
+                data-category="designer">
                 <div
                     class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors overflow-hidden">
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ana" alt="Ana" />
@@ -521,8 +525,8 @@
             </div>
 
             <!-- Member 4 -->
-            <div
-                class="bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center">
+            <div class="member-card bg-bg-card p-6 rounded-2xl border border-white/5 hover:border-superteam-purple/50 hover:-translate-y-1 transition-all group text-center"
+                data-category="content">
                 <div
                     class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4 border-2 border-transparent group-hover:border-superteam-purple transition-colors overflow-hidden">
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Pedro" alt="Pedro" />
@@ -545,8 +549,8 @@
     </section>
 
     <!-- Partners Section -->
-    <section class="py-20 bg-bg-primary border-t border-white/5">
-        <div class="container mx-auto px-6 text-center mb-12 fade-up">
+    <section class="py-24 bg-bg-primary border-t border-white/5">
+        <div class="container mx-auto px-6 text-center mb-16 fade-up">
             <h2 class="text-2xl font-bold text-gray-400 uppercase tracking-widest">Trusted By Ecosystem Leaders</h2>
         </div>
 
@@ -574,7 +578,7 @@
             <h2 class="text-3xl md:text-5xl font-bold mb-4">Wall of Love</h2>
         </div>
 
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 fade-up">
             <!-- Testimonial 1 -->
             <div class="bg-bg-card p-8 rounded-2xl border border-white/5 relative">
                 <div class="text-6xl text-superteam-purple/20 absolute top-4 left-4 font-serif">"</div>
@@ -623,7 +627,7 @@
     <!-- FAQ Section -->
     <section class="py-24 bg-bg-secondary">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center fade-up">Frequently Asked Questions</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center fade-up">Frequently Asked Questions</h2>
 
             <div class="space-y-4 fade-up">
                 <!-- FAQ Item 1 -->
@@ -634,7 +638,7 @@
                         <span class="transform transition-transform text-superteam-purple text-2xl">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                        <div class="p-6 pt-0 text-gray-400">
+                        <div class="p-6 pt-0 text-gray-300">
                             Superteam Brazil is the premier community for Web3 builders, creators, and professionals in
                             Latin America's largest market. We connect talent with opportunities in the Solana
                             ecosystem.
@@ -650,7 +654,7 @@
                         <span class="transform transition-transform text-superteam-purple text-2xl">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                        <div class="p-6 pt-0 text-gray-400">
+                        <div class="p-6 pt-0 text-gray-300">
                             Join our Telegram community and introduce yourself! Membership is open to anyone passionate
                             about building in Web3. Active contributors can earn roles and access exclusive
                             opportunities.
@@ -666,7 +670,7 @@
                         <span class="transform transition-transform text-superteam-purple text-2xl">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                        <div class="p-6 pt-0 text-gray-400">
+                        <div class="p-6 pt-0 text-gray-300">
                             Not at all! We welcome designers, content creators, community managers, marketers, and
                             anyone interested in Web3. The ecosystem needs diverse skills.
                         </div>
